@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Product } from './Product';
-import { getAllLocations, getLocationById } from '../../modules/LocationManager';
+import { getAllProducts, getProductById } from '../../modules/ProductManager';
 
 export const ProductList = () => {
-  
-  const [products, setProducts] = useState([]);
- 
-  const getProducts = () => {  
-  
-    return getProducts().then(ProductsFromAPI => {
-    // setProducts(productsFromAPI)
+    const [products, setProducts] = useState([]);
+    const getProducts = () => {    
+    return getAllProducts().then(productsFromAPI => {
+    setProducts(productsFromAPI)
   });
 };
-
   useEffect(() => {
-    setProducts();
-  }, []);
-  
+    getProducts();
+  }, []);  
   return (
     <div className="product">
       {products.map(product => 
