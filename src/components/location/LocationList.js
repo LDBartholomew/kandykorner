@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Location } from './Location';
 import { getAllLocations, getLocationById } from '../../modules/LocationManager';
-//import "./Location.css";
 
 export const LocationList = () => {
-  const [locations, setLocations] = useState([]);
- 
+  const [locations, setLocations] = useState([]); 
   const getLocations = () => {  
   return getAllLocations().then(locationsFromAPI => {
     setLocations(locationsFromAPI)
   });
 };
-
   useEffect(() => {
-    setLocations();
-  }, []);
-  
+    getLocations();
+  }, []);  
   return (
     <div className="location">
       {locations.map(location => 

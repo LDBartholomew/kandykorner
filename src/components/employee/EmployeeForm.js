@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { addEmployee } from '../../modules/EmployeeManager';
+import { getAllLocations } from "../../modules/LocationManager";
 import './EmployeeForm.css'
 
 export const EmployeeForm = () => {
@@ -53,7 +54,7 @@ export const EmployeeForm = () => {
 			<h2 className="employeeForm__title">New Employee</h2>
 			<fieldset>
 				<div className="form-group">
-					<label htmlFor="name">Employee name:</label>
+					<label htmlFor="name">Employee name:   </label>
 					<input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee Name" value={employee.name} />
 				</div>
 			</fieldset>
@@ -98,8 +99,8 @@ export const EmployeeForm = () => {
 			</fieldset>	
             <fieldset>
 				<div className="form-group">
-					<label htmlFor="name">Hourly Rate:</label>
-					<input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee Name" value={employee.name} />
+					<label htmlFor="name">Hourly Rate:  </label>
+					<input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Hourly Rate" value={employee.name} />
 				</div>
 			</fieldset>		
 			
